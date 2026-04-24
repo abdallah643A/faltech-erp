@@ -1,0 +1,17 @@
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'receptionist';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'cashier';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'billing_officer';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'insurance_officer';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'doctor';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'er_doctor';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'surgeon';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'pharmacist';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'lab_tech';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'radiology_tech';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'nurse';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'head_nurse';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'ward_clerk';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'bed_manager';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'medical_records';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'hospital_admin';
+ALTER TYPE public.app_role ADD VALUE IF NOT EXISTS 'hospital_executive';

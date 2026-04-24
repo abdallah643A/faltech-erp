@@ -1,0 +1,1 @@
+UPDATE activities SET company_id = '827ca340-669a-47a8-b097-7273425ae8df' WHERE company_id IS NULL AND business_partner_id = '5be73679-aecf-4a68-9927-4ae99b47d528';

@@ -1,0 +1,37 @@
+project_id = "wrjjzpgvnxapaonyjsbf"
+
+[functions.crm-capture-lead]
+verify_jwt = false
+
+[functions.crm-social-webhook]
+verify_jwt = false
+
+[functions.crm-score-lead]
+verify_jwt = false
+
+[functions.crm-assign-lead]
+verify_jwt = false
+
+[functions.crm-generate-nba]
+verify_jwt = false
+
+[functions.crm-compute-deal-risk]
+verify_jwt = false
+
+[functions.fleet-telematics-ingest]
+verify_jwt = false
+
+[functions.restaurant-aggregator-webhook]
+verify_jwt = false
+
+[functions.integration-oauth-token]
+verify_jwt = false
+
+[functions.integration-partner-api]
+verify_jwt = false
+
+[functions.integration-webhook-dispatcher]
+verify_jwt = false
+
+[functions.integration-template-processor]
+verify_jwt = false

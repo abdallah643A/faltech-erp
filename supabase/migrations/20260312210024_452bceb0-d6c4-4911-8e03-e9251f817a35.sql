@@ -1,0 +1,1 @@
+ALTER TABLE public.activities DROP CONSTRAINT activities_assigned_to_fkey;

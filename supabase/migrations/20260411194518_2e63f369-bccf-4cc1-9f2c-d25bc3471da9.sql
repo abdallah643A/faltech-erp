@@ -1,0 +1,1 @@
+ALTER TABLE public.chart_of_accounts DROP CONSTRAINT IF EXISTS chart_of_accounts_acct_code_key;

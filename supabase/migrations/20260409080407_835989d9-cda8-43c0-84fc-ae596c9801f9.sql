@@ -1,0 +1,18 @@
+ALTER TABLE public.chart_of_accounts
+  ADD COLUMN IF NOT EXISTS foreign_name text,
+  ADD COLUMN IF NOT EXISTS code_for_exporting text,
+  ADD COLUMN IF NOT EXISTS default_vat_group text,
+  ADD COLUMN IF NOT EXISTS category text,
+  ADD COLUMN IF NOT EXISTS planning_level text,
+  ADD COLUMN IF NOT EXISTS remarks text,
+  ADD COLUMN IF NOT EXISTS remarks_template text,
+  ADD COLUMN IF NOT EXISTS active_from date,
+  ADD COLUMN IF NOT EXISTS active_to date,
+  ADD COLUMN IF NOT EXISTS active_remarks text,
+  ADD COLUMN IF NOT EXISTS account_status text NOT NULL DEFAULT 'active',
+  ADD COLUMN IF NOT EXISTS balance_allowed boolean NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS balance_from numeric,
+  ADD COLUMN IF NOT EXISTS balance_to numeric,
+  ADD COLUMN IF NOT EXISTS cost_accounting_only boolean NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS allow_multi_linking boolean NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS permit_other_vat boolean NOT NULL DEFAULT true;

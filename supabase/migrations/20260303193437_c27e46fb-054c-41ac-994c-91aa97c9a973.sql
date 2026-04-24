@@ -1,0 +1,1 @@
+ALTER TABLE public.business_partners ADD COLUMN IF NOT EXISTS source text;

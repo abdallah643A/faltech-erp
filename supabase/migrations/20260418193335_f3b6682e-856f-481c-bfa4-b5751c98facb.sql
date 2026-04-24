@@ -1,0 +1,2 @@
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS preferred_persona TEXT;
+COMMENT ON COLUMN public.profiles.preferred_persona IS 'User-selected dashboard persona/lens (ceo, cfo, coo, sales_manager, procurement_manager, project_manager, hr_manager, custom). Drives KPI preset application via useDashboardPersona.';

@@ -1,0 +1,18 @@
+
+ALTER TABLE public.cpms_tenders
+  ADD COLUMN IF NOT EXISTS project_type TEXT,
+  ADD COLUMN IF NOT EXISTS contract_type TEXT,
+  ADD COLUMN IF NOT EXISTS duration_months INTEGER,
+  ADD COLUMN IF NOT EXISTS city TEXT,
+  ADD COLUMN IF NOT EXISTS region TEXT,
+  ADD COLUMN IF NOT EXISTS received_date DATE,
+  ADD COLUMN IF NOT EXISTS submission_date DATE,
+  ADD COLUMN IF NOT EXISTS project_size TEXT,
+  ADD COLUMN IF NOT EXISTS go_nogo TEXT DEFAULT 'pending',
+  ADD COLUMN IF NOT EXISTS tech_pass BOOLEAN,
+  ADD COLUMN IF NOT EXISTS tech_fail_reasons TEXT,
+  ADD COLUMN IF NOT EXISTS jv_information TEXT,
+  ADD COLUMN IF NOT EXISTS client_type TEXT,
+  ADD COLUMN IF NOT EXISTS submission_status TEXT DEFAULT 'not_submitted',
+  ADD COLUMN IF NOT EXISTS remaining_days INTEGER,
+  ADD COLUMN IF NOT EXISTS document_data TEXT;

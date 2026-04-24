@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Al Rajhi CRM Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Navy Blue - Primary Brand */
+    --primary: 214 72% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Gold Accent */
+    --secondary: 43 65% 49%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 43 65% 49%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning Orange */
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    /* Info Blue */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 72% 23%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar - Darker Navy */
+    --sidebar-background: 214 72% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 43 65% 49%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 214 72% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 214 50% 25%;
+    --sidebar-ring: 43 65% 49%;
+
+    /* Custom Enterprise Variables */
+    --header-height: 64px;
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 72px;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 43 65% 49%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 214 72% 23%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 214 72% 20%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 40%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 43 65% 49%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 43 65% 49%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 43 65% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', 'Noto Sans Arabic', system-ui, sans-serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+/* ===== Accessibility: Focus Indicators ===== */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content link */
+.skip-to-content {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg focus:text-sm focus:font-medium;
+}
+
+/* ===== High Contrast Mode ===== */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 220 100% 25%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 0 0% 93%;
+  --muted-foreground: 0 0% 20%;
+  --border: 0 0% 0%;
+  --input: 0 0% 0%;
+  --ring: 220 100% 40%;
+  --success: 120 100% 25%;
+  --success-foreground: 0 0% 100%;
+  --warning: 40 100% 40%;
+  --warning-foreground: 0 0% 0%;
+  --destructive: 0 100% 40%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+.high-contrast .dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+  --border: 0 0% 100%;
+  --input: 0 0% 100%;
+}
+
+.high-contrast *:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.high-contrast [data-status],
+.high-contrast [data-state] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+@layer components {
+  /* Enterprise Card Styles */
+  .enterprise-card {
+    @apply bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .enterprise-card-header {
+    @apply px-4 py-3 md:px-6 md:py-4 border-b border-border;
+  }
+
+  .enterprise-card-body {
+    @apply p-4 md:p-6;
+  }
+
+  /* KPI Card Gradient Backgrounds */
+  .kpi-card-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(214 72% 30%) 100%);
+  }
+
+  .kpi-card-success {
+    background: linear-gradient(135deg, hsl(var(--success)) 0%, hsl(142 71% 35%) 100%);
+  }
+
+  .kpi-card-warning {
+    background: linear-gradient(135deg, hsl(var(--warning)) 0%, hsl(38 92% 40%) 100%);
+  }
+
+  .kpi-card-info {
+    background: linear-gradient(135deg, hsl(var(--info)) 0%, hsl(199 89% 38%) 100%);
+  }
+
+  /* Status Badges */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-active {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .status-inactive {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .status-draft {
+    @apply bg-info/10 text-info;
+  }
+
+  /* Data Table Styles */
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply px-3 py-3 text-left font-semibold text-muted-foreground bg-muted/50 first:rounded-tl-lg last:rounded-tr-lg whitespace-nowrap;
+  }
+
+  [dir="rtl"] .data-table th {
+    @apply text-right;
+  }
+
+  .data-table td {
+    @apply px-3 py-3 border-b border-border;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  /* Responsive column visibility */
+  @media (max-width: 639px) {
+    .col-mobile-hidden {
+      display: none !important;
+    }
+    .data-table th,
+    .data-table td {
+      @apply px-2 py-2 text-xs;
+    }
+    /* Responsive page headers */
+    .page-header {
+      @apply flex flex-col gap-2;
+    }
+    .page-header-actions {
+      @apply flex flex-wrap gap-1.5;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 767px) {
+    .col-mobile-hidden {
+      display: none !important;
+    }
+    .data-table th,
+    .data-table td {
+      @apply px-2 py-2 text-xs;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col-tablet-hidden {
+      display: none !important;
+    }
+  }
+
+  /* Form Styles */
+  .form-section {
+    @apply space-y-4 p-4 md:p-6 bg-card rounded-lg border border-border;
+  }
+
+  .form-section-title {
+    @apply text-base md:text-lg font-semibold text-foreground mb-3 md:mb-4 pb-2 border-b border-border;
+  }
+
+  /* Responsive page headers */
+  .page-header-title {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold text-foreground;
+  }
+
+  .page-header-subtitle {
+    @apply text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1;
+  }
+
+  /* Navigation Active States */
+  .nav-item-active {
+    @apply bg-sidebar-accent text-sidebar-primary font-medium;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  [dir="rtl"] .animate-slide-in-left {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  [dir="rtl"] .animate-slide-in-right {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  /* Page Transitions */
+  .page-enter {
+    @apply animate-fade-in;
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .dark .glass {
+    @apply bg-black/50 border-white/10;
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Hide everything except print targets */
+  body > *:not(iframe) {
+    visibility: hidden;
+  }
+  
+  .print-container,
+  .print-container * {
+    visibility: visible !important;
+  }
+  
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Support react-to-print ref-based printing inside iframes */
+  [data-pdf-page],
+  [data-pdf-page] * {
+    visibility: visible !important;
+  }
+  
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.sap_companies ADD COLUMN IF NOT EXISTS default_currency TEXT NOT NULL DEFAULT 'SAR';

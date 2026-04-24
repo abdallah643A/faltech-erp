@@ -1,0 +1,23 @@
+
+ALTER TABLE public.enterprise_risks
+  ADD COLUMN IF NOT EXISTS cause TEXT,
+  ADD COLUMN IF NOT EXISTS impact_description TEXT,
+  ADD COLUMN IF NOT EXISTS probability_score INTEGER DEFAULT 2,
+  ADD COLUMN IF NOT EXISTS impact_level INTEGER DEFAULT 2,
+  ADD COLUMN IF NOT EXISTS trigger_conditions TEXT,
+  ADD COLUMN IF NOT EXISTS contingency_plan TEXT,
+  ADD COLUMN IF NOT EXISTS residual_risk_score NUMERIC DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS residual_probability INTEGER DEFAULT 1,
+  ADD COLUMN IF NOT EXISTS residual_impact INTEGER DEFAULT 1,
+  ADD COLUMN IF NOT EXISTS financial_exposure NUMERIC DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS financial_exposure_max NUMERIC DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS risk_response_strategy TEXT DEFAULT 'mitigate',
+  ADD COLUMN IF NOT EXISTS project_id UUID REFERENCES public.projects(id),
+  ADD COLUMN IF NOT EXISTS branch_id UUID REFERENCES public.branches(id),
+  ADD COLUMN IF NOT EXISTS portfolio TEXT,
+  ADD COLUMN IF NOT EXISTS risk_type TEXT DEFAULT 'threat',
+  ADD COLUMN IF NOT EXISTS last_review_date DATE,
+  ADD COLUMN IF NOT EXISTS next_review_date DATE,
+  ADD COLUMN IF NOT EXISTS materialized BOOLEAN DEFAULT false,
+  ADD COLUMN IF NOT EXISTS materialized_at TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS actual_impact_cost NUMERIC DEFAULT 0;

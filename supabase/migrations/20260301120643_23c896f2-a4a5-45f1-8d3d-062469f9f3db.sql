@@ -1,0 +1,22 @@
+-- Add missing SAP B1 Item Master Data fields
+ALTER TABLE public.items 
+  ADD COLUMN IF NOT EXISTS foreign_name TEXT,
+  ADD COLUMN IF NOT EXISTS price_list TEXT,
+  ADD COLUMN IF NOT EXISTS uom_group TEXT,
+  ADD COLUMN IF NOT EXISTS unit_price NUMERIC DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS pricing_unit TEXT DEFAULT 'Pcs',
+  ADD COLUMN IF NOT EXISTS is_inventory_item BOOLEAN DEFAULT true,
+  ADD COLUMN IF NOT EXISTS is_sales_item BOOLEAN DEFAULT true,
+  ADD COLUMN IF NOT EXISTS is_purchasing_item BOOLEAN DEFAULT true,
+  ADD COLUMN IF NOT EXISTS additional_identifier TEXT,
+  ADD COLUMN IF NOT EXISTS country_of_origin TEXT,
+  ADD COLUMN IF NOT EXISTS commodity_classification TEXT,
+  ADD COLUMN IF NOT EXISTS standard_item_identification TEXT,
+  ADD COLUMN IF NOT EXISTS valid_from DATE,
+  ADD COLUMN IF NOT EXISTS valid_to DATE,
+  ADD COLUMN IF NOT EXISTS valid_remarks TEXT,
+  ADD COLUMN IF NOT EXISTS no_discounts BOOLEAN DEFAULT false,
+  ADD COLUMN IF NOT EXISTS properties JSONB,
+  ADD COLUMN IF NOT EXISTS remarks TEXT,
+  ADD COLUMN IF NOT EXISTS production_standard_cost NUMERIC DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS advanced_rule_type TEXT DEFAULT 'General';

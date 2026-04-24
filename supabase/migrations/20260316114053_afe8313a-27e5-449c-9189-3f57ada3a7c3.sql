@@ -1,0 +1,1 @@
+UPDATE je_mapping_rules SET is_active = true WHERE id IN ('642630a1-9ecf-4760-88af-0b8f6fc985f6', '74aeb580-3aca-4691-82bb-e275587b1847');

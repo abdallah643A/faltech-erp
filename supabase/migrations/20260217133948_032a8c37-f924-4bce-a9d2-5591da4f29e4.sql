@@ -1,0 +1,8 @@
+
+ALTER TABLE public.mail_configuration
+  ADD COLUMN IF NOT EXISTS smtp_host TEXT DEFAULT 'smtp.office365.com',
+  ADD COLUMN IF NOT EXISTS smtp_port INTEGER DEFAULT 587,
+  ADD COLUMN IF NOT EXISTS smtp_username TEXT,
+  ADD COLUMN IF NOT EXISTS smtp_password TEXT,
+  ADD COLUMN IF NOT EXISTS smtp_secure BOOLEAN DEFAULT true,
+  ADD COLUMN IF NOT EXISTS use_custom_smtp BOOLEAN DEFAULT false;

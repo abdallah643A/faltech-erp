@@ -1,0 +1,1 @@
+ALTER TABLE public.client_portals ALTER COLUMN customer_id DROP NOT NULL;
