@@ -1262,7 +1262,7 @@ const App = () => (
                   <Route path="/asset-utilization" element={<AssetUtilization />} />
                   <Route path="/asset-finance" element={<AssetFinancialIntelligence />} />
                   <Route path="/asset-maintenance-hub" element={<AssetMaintenanceHub />} />
-                  <Route path="/asset-lifecycle" element={<AssetLifecycleCompliance />} />
+                  <Route path="/asset-lifecycle-compliance" element={<AssetLifecycleCompliance />} />
                   <Route path="/asset-advanced-analytics" element={<AssetAdvancedAnalytics />} />
                   <Route path="/asset-meter-readings" element={<MeterReadingsPage />} />
                   <Route path="/asset-reservations" element={<AssetReservationCalendar />} />
@@ -1360,9 +1360,9 @@ const App = () => (
                   <Route path="/hr/payroll" element={<Payroll />} />
                   <Route path="/hr/performance" element={<Performance />} />
                   <Route path="/hr/training" element={<Training />} />
-                  <Route path="/hr/recruitment" element={<Recruitment />} />
+                  <Route path="/hr/recruitment-v1" element={<Recruitment />} />
                   <Route path="/hr/ksa-compliance" element={<KSACompliance />} />
-                  <Route path="/hr/self-service" element={<EmployeeSelfService />} />
+                  <Route path="/hr/employee-self-service" element={<EmployeeSelfService />} />
                   <Route path="/hr/compliance" element={<ComplianceManagement />} />
                   <Route path="/hr/handbook" element={<EmployeeHandbook />} />
                   <Route path="/pm/projects" element={<Projects />} />
@@ -1450,11 +1450,11 @@ const App = () => (
                   <Route path="/banking/dashboard" element={<BankingDashboard />} />
                   <Route path="/banking/cash-flow-forecast" element={<CashFlowForecasting />} />
                   <Route path="/banking/cash-flow-scenarios" element={<CashFlowScenarios />} />
-                  <Route path="/banking/cash-position" element={<CashPositionDashboard />} />
+                  <Route path="/banking/cash-position-v1" element={<CashPositionDashboard />} />
                   <Route path="/banking/smart-reconciliation" element={<SmartReconciliation />} />
                   <Route path="/banking/multi-bank-recon" element={<MultiBankRecon />} />
                   <Route path="/banking/recon-exceptions" element={<ReconExceptions />} />
-                  <Route path="/banking/payment-optimization" element={<PaymentOptimization />} />
+                  <Route path="/banking/payment-optimization-v1" element={<PaymentOptimization />} />
                   <Route path="/banking/kpi-dashboard" element={<BankingKPIDashboard />} />
                   <Route path="/banking/drill-down" element={<BankingDrillDown />} />
                   <Route path="/banking/variance-analysis" element={<BankingVarianceAnalysis />} />
@@ -1810,12 +1810,12 @@ const App = () => (
                   <Route path="/drag-and-relate" element={<DragAndRelate />} />
                   <Route path="/print-layout-designer" element={<PrintLayoutDesigner />} />
                   <Route path="/pmo/portfolio" element={<PortfolioDashboard />} />
-                  <Route path="/pmo/executive" element={<PMOExecutiveDashboard />} />
+                  <Route path="/pmo/executive-v1" element={<PMOExecutiveDashboard />} />
                   <Route path="/pmo/lessons" element={<LessonsLearned />} />
                   <Route path="/pmo/alerts" element={<PMOAlertCenter />} />
                   <Route path="/pmo/resources" element={<PMOResourceManagement />} />
                   <Route path="/pmo/stakeholder" element={<PMOStakeholderHub />} />
-                  <Route path="/pmo/dependencies" element={<PMODependencyTracking />} />
+                  <Route path="/pmo/dependency-tracking" element={<PMODependencyTracking />} />
                   <Route path="/pmo/predictive" element={<PMOPredictiveAnalytics />} />
                   <Route path="/pmo/optimization" element={<PMOPortfolioOptimization />} />
                   <Route path="/pmo/compliance" element={<PMOComplianceAudit />} />
@@ -1954,7 +1954,7 @@ const App = () => (
                          <Route path="/maintenance-reliability" element={<MaintenanceReliabilityAnalytics />} />
                          <Route path="/self-service-hub" element={<EmployeeManagerSelfServiceHub />} />
                          <Route path="/board-pack-generator" element={<BoardPackGeneratorPage />} />
-                         <Route path="/process-mining" element={<ProcessMiningAnalyzer />} />
+                         <Route path="/process-mining/analyzer" element={<ProcessMiningAnalyzer />} />
                          <Route path="/document-retention" element={<DocumentRetentionCenter />} />
                          <Route path="/data-lineage" element={<DataLineageExplorer />} />
                          <Route path="/compliance-obligations" element={<ComplianceObligationTracker />} />
